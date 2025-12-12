@@ -8,7 +8,7 @@ static MPU6050_6Axis_MotionApps20 mpu;
 static uint16_t packetSize;                // expected DMP packet size (default is 42 bytes)
 static volatile bool mpuInterrupt = false; // indicates whether MPU interrupt pin has gone high
 
-void IRAM_ATTR dmpDataReady()
+void dmpDataReady()
 {
   mpuInterrupt = true;
 }
@@ -17,7 +17,8 @@ uint8_t MPU6050_setup()
 {
   // This has to happen _very_ early with the latest (6.5.0) platform
   // Gyro setup (utilize maximum I2C bus speed supported by the MPU6050 - 400kHz)
-  Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, 400000UL);
+  Wire.begin();
+  Wire.setClock(400000UL);
 
   mpu.initialize();
   if (!mpu.testConnection())

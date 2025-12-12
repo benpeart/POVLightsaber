@@ -11,26 +11,23 @@
 // #define BATTERY_VOLTAGE
 
 #include <Arduino.h>
-#include <Preferences.h>
 
-// ESP32 Pin Assignments
+// Adafruit Feather RP2040 Pin Assignments
 
-#define PIN_LED_DATA 14        // pin to the data input line of the WS2815b LEDs
-#define PIN_BATTERY_VOLTAGE 36 // ADC pin connected to voltage divider
+#define PIN_LED_DATA 12        // pin to the data input line of the WS2815b LEDs
+#define PIN_BATTERY_VOLTAGE 29 // ADC pin connected to voltage divider
 
-#define PIN_BUTTON_PUSH 17  // Push Button
-#define PIN_BUTTON_RED 05   // Red LED around button
-#define PIN_BUTTON_GREEN 18 // Green LED around button
-#define PIN_BUTTON_BLUE 19  // Blue LED around button
+#define PIN_BUTTON_PUSH 9   // Push Button
+#define PIN_BUTTON_RED 6    // Red LED around button
+#define PIN_BUTTON_GREEN 7  // Green LED around button
+#define PIN_BUTTON_BLUE 8   // Blue LED around button
 
-#define PIN_SOUND_LRC 26  // MAX98357A Left/Right/Clock Pin
-#define PIN_SOUND_BCLK 25 // MAX98357A Bit Clock Pin
-#define PIN_SOUND_DIN 33  // MAX98357A Data In Pin
+#define PIN_SOUND_LRC 4   // MAX98357A Left/Right/Clock Pin
+#define PIN_SOUND_BCLK 3  // MAX98357A Bit Clock Pin
+#define PIN_SOUND_DIN 2   // MAX98357A Data In Pin
 
-#define PIN_I2C_SDA 21       // MPU SDA pin
-#define PIN_I2C_SCL 22       // MPU SCL pin
-#define PIN_MPU_INTERRUPT 23 // MPU interrupt pin, RISING triggers interrupt
-
-extern Preferences preferences;
+#define PIN_I2C_SDA 24       // MPU SDA pin (I2C1)
+#define PIN_I2C_SCL 25       // MPU SCL pin (I2C1)
+#define PIN_MPU_INTERRUPT 11 // MPU interrupt pin, RISING triggers interrupt
 
 #endif // GLOBALS_H
